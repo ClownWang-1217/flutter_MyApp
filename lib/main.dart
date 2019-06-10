@@ -140,7 +140,7 @@ class LogoAppStateWidget extends State<LogoApp>
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    debugPrint('buildtooo');
+    debugPrint('buildtoooffff');
     return new Center(
         child: new Container(
       margin: new EdgeInsets.symmetric(vertical: 10.0),
