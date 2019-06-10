@@ -141,6 +141,7 @@ class LogoAppStateWidget extends State<LogoApp>
   Widget build(BuildContext context) {
     // TODO: implement build
     debugPrint('buildtoooffff');
+    debugPrint('fdfdf');
     return new Center(
         child: new Container(
       margin: new EdgeInsets.symmetric(vertical: 10.0),
