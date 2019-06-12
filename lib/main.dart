@@ -3,22 +3,65 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/foundation.dart';
+import 'dart:async';
+import 'package:flutter/widgets.dart';
 
-void main() => runApp(MyAppFul());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'hahahahah',
-        theme: ThemeData(primaryColor: Colors.yellow),
-        home: new Scaffold(
-          appBar: new AppBar(
-            title: new Text('title'),
-          ),
-          // body: new Center(child: new ),
-        ));
+      title: 'Flutter Code Sample for Navigator',
+      // MaterialApp contains our top-level Navigator
+      initialRoute: '/',
+      //home: WeChartLoading(),
+      routes: {
+        '/': (BuildContext context) => WeChartLoading(),
+        '/signup': (BuildContext context) => MyAppFul(),
+      },
+    );
   }
+}
+
+class WeChartLoading extends StatefulWidget {
+  WeChartLoading({Key key}) : super(key: key);
+
+  _WeChartLoadingState createState() => _WeChartLoadingState();
+}
+
+class _WeChartLoadingState extends State<WeChartLoading> {
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+          child: Image.asset('images/loading.jpg'),
+        );
+  }
+
+  var _duration = new Duration(seconds: 3);
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    new Future.delayed(_duration, () {
+      //设置定时执行
+      //handleTimeout();
+       Navigator.pushNamed(context, '/signup');
+      // Navigator.push(context, MaterialPageRoute(
+      //   builder: (context) => MyAppFul()
+      // ));
+    });
+  }
+
+  // startTimeout([int milliseconds]) {
+  //   var duration = _duration;
+  //   return new Timer(duration, handleTimeout);
+  // }
+
+  // void handleTimeout() {
+  //   // callback function
+  // }
 }
 
 class MyAppFul extends StatefulWidget {
