@@ -48,9 +48,9 @@ class _WeChartLoadingState extends State<WeChartLoading> {
       //设置定时执行
       //handleTimeout();
        Navigator.pushNamed(context, '/signup');
-      // Navigator.push(context, MaterialPageRoute(
-      //   builder: (context) => MyAppFul()
-      // ));
+      Navigator.push(context, MaterialPageRoute(
+        builder: (context) => MyAppFul()
+      ));
     });
   }
 
